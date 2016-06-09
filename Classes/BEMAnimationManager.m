@@ -36,6 +36,24 @@
     return animation;
 }
 
+- (CABasicAnimation *)backwardStrokeAnimationReverse:(BOOL)reverse
+{
+  CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"strokeStart"];
+  if (reverse) {
+    animation.fromValue = [NSNumber numberWithFloat:1.0];
+    animation.toValue = [NSNumber numberWithFloat:0.0];
+  } else {
+    animation.fromValue = [NSNumber numberWithFloat:0.0];
+    animation.toValue = [NSNumber numberWithFloat:1.0];
+  }
+  animation.duration = self.animationDuration;
+  animation.removedOnCompletion = NO;
+  animation.fillMode = kCAFillModeForwards;
+  animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+  
+  return animation;
+}
+
 - (CABasicAnimation *)opacityAnimationReverse:(BOOL)reverse {
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"opacity"];
     if (reverse) {

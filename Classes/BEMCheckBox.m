@@ -282,7 +282,16 @@
             [self.checkMarkLayer addAnimation:animation forKey:@"strokeEnd"];
         }
             return;
-            
+        
+        case BEMAnimationTypeBackwardStroke: {
+            CABasicAnimation *animation = [self.animationManager backwardStrokeAnimationReverse:YES];
+          
+            [self.onBoxLayer addAnimation:animation forKey:@"strokeStart"];
+            animation.delegate = self;
+            [self.checkMarkLayer addAnimation:animation forKey:@"strokeStart"];
+        }
+            return;
+        
         case BEMAnimationTypeFill: {
             CAKeyframeAnimation *wiggle = [self.animationManager fillAnimationWithBounces:1 amplitude:0.18 reverse:NO];
             CABasicAnimation *opacityAnimation = [self.animationManager opacityAnimationReverse:NO];
@@ -370,7 +379,16 @@
             [self.checkMarkLayer addAnimation:animation forKey:@"strokeEnd"];
         }
             return;
-            
+        
+        case BEMAnimationTypeBackwardStroke: {
+            CABasicAnimation *animation = [self.animationManager backwardStrokeAnimationReverse:NO];
+        
+            [self.onBoxLayer addAnimation:animation forKey:@"strokeStart"];
+            animation.delegate = self;
+            [self.checkMarkLayer addAnimation:animation forKey:@"strokeStart"];
+        }
+            return;
+        
         case BEMAnimationTypeFill: {
             CAKeyframeAnimation *wiggle = [self.animationManager fillAnimationWithBounces:1 amplitude:0.18 reverse:YES];
             wiggle.duration = self.animationDuration;

@@ -27,6 +27,7 @@
  * @return Returns the CABasicAnimation object.
  */
 - (CABasicAnimation *)strokeAnimationReverse:(BOOL)reverse;
+- (CABasicAnimation *)backwardStrokeAnimationReverse:(BOOL)reverse;
 
 /** Returns a CABasicAnimation which animates the opacity.
  * @param reverse The direction of the animation. Set to YES if the animation should go from opacity 0 to 1, or NO for the opposite.

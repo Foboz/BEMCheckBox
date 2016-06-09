@@ -26,9 +26,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.checkBox.onAnimationType = BEMAnimationTypeBounce;
-    self.checkBox.offAnimationType = BEMAnimationTypeBounce;
-    
+    self.checkBox.onAnimationType = BEMAnimationTypeBackwardStroke;
+    self.checkBox.offAnimationType = BEMAnimationTypeBackwardStroke;
+    self.checkBox.hideBox = YES;
+  
     self.animationButton.layer.cornerRadius = 5.0;
     self.animationButton.layer.borderColor = [UIColor whiteColor].CGColor;
     self.animationButton.layer.borderWidth = 1.0;

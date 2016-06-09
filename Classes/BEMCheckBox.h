@@ -38,6 +38,7 @@ typedef NS_ENUM(NSInteger, BEMAnimationType) {
      *  Should be used with a clear colored onFillColor property.
      */
     BEMAnimationTypeStroke,
+    BEMAnimationTypeBackwardStroke,
     
     /** When tapped, the checkbox is filled from its center.
      * Should be used with a colored onFillColor property.
